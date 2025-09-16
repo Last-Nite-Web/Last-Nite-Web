@@ -3,7 +3,6 @@
   --primary: #ff6e7f;
   --primary-accent: #ff9a8f;
   --primary-dark: #d94a5a;
-  --bg-gradient: linear-gradient(135deg, #13151a 0%, #272b33 50%, #3c3f45 100%);
   --radius-sm: 6px;
   --radius: 14px;
   --radius-pill: 999px;
@@ -14,10 +13,11 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: var(--bg-gradient);
   color: #e9ecf1;
   position: relative;
   overflow-x: hidden;
+  padding-top: 64px;
+  background: none;
 }
 
 /* Hero Section */
@@ -31,11 +31,35 @@
   gap: 1rem;
 }
 
+/* Features dentro del hero con video */
+.home-hero .features { margin-top: 2.8rem; width: 100%; max-width: 1180px; }
+.home-hero .features h2 { text-shadow: 0 4px 14px rgba(0,0,0,0.55); }
+.home-hero .feature-grid { margin: 0 auto; }
+.home-hero .feature-card { background: rgba(0,0,0,0.18); border: 1px solid rgba(255,255,255,0.12); }
+.home-hero .feature-card:before { background: linear-gradient(140deg, rgba(255,110,127,0.25), transparent 65%); }
+.home-hero .feature-card:hover { background: rgba(0,0,0,0.28); }
+
+@media (max-width: 720px) {
+  .home-hero .features { margin-top: 2.2rem; }
+}
+
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(.55) saturate(1.1);
+  pointer-events: none;
+}
+
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 40%, rgba(255,110,127,0.3), transparent 65%),
-              linear-gradient(to bottom, rgba(10,10,15,0) 0%, rgba(10,10,15,0.85) 85%);
+  background: radial-gradient(circle at 50% 40%, rgba(255,110,127,0.18), transparent 65%),
+              linear-gradient(to bottom, rgba(10,10,15,0) 0%, rgba(10,10,15,0.55) 85%);
   z-index: 0;
   pointer-events: none;
   mix-blend-mode: screen;
@@ -216,7 +240,7 @@
 .cta-banner p { margin: 0 0 1.1rem; font-weight: 400; letter-spacing: .03em; color: #fff; }
 
 /* Footer */
-.home-footer { margin-top: auto; padding: 2rem 1rem 2.6rem; text-align: center; font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; opacity: .55; }
+.home-footer { background: black;margin-top: auto; padding: 2rem 1rem 2.6rem; text-align: center; font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; opacity: .55; }
 .home-footer small { display: block; }
 
 /* Focus styles */
@@ -226,7 +250,8 @@
 /* Utilities / Animations */
 @media (min-width: 880px) {
   .home-hero { padding-top: 5.5rem; }
-  .home-main { padding: 0 3.5rem 5rem; }
+  .home-main { padding: 0 3.5rem 5rem; 
+                background: black;}
   .feature-card { padding: 1.45rem 1.4rem 1.3rem; }
   .countdown { gap: 1.1rem; }
   .countdown-segment { min-width: 82px; }

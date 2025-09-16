@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import lastNiteLogo from '../../static/images/logo.png';
+import homeVideo from '../../static/images/videos/video home.mp4';
 import './Home.css';
 
 // Calcula la próxima medianoche de fin de año.
@@ -48,6 +49,15 @@ const Home = () => {
   return (
     <div className="home-container">
       <header className="home-hero" role="banner">
+        <video
+          className="bg-video"
+          src={homeVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-hidden="true"
+        />
         <div className="hero-overlay" aria-hidden="true" />
         <img src={lastNiteLogo} alt="Logo de Last Nite" className="home-logo" />
         <h1 className="home-title" aria-label="Last Nite fiesta de fin de año">LAST NITE</h1>
@@ -66,9 +76,6 @@ const Home = () => {
           Quiero mi entrada
         </button>
         <div className="home-cta-text">¡Vive la última noche del año con nosotros!</div>
-      </header>
-
-      <main className="home-main" role="main">
         <section className="features" aria-labelledby="features-title">
           <h2 id="features-title">¿Por qué elegir LAST NITE?</h2>
           <div className="feature-grid">
@@ -90,6 +97,10 @@ const Home = () => {
             </article>
           </div>
         </section>
+      </header>
+
+      <main className="home-main" role="main">
+        {/* Features movido al header para compartir fondo de video */}
 
         <section className="details" aria-labelledby="details-title">
           <h2 id="details-title">Lo que te espera</h2>
