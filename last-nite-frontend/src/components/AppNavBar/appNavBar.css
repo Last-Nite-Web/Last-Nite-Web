@@ -2,11 +2,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  background: #ffffff;
-  color: #fff;
+  padding: 1rem 2vw;
+  background: transparent;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
   opacity: 0;
   animation: fadeInNavbar 1s ease forwards;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
 }
 
 @keyframes fadeInNavbar {
@@ -31,7 +37,25 @@
   margin: 0;
   padding: 0;
   font-family: cursive;
+  flex: 1;
+  justify-content: flex-end;
+  min-width: 0;
+  padding-right: 6vw;
+}
 
+.navbar-links a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.5rem 1.1rem;
+  border-radius: 22px;
+  transition: background .2s, color .2s;
+  background: rgba(0,0,0,0.18);
+}
+.navbar-links a:hover, .navbar-links a:focus-visible {
+  background: rgba(255,255,255,0.18);
+  color: #ff6e7f;
+  outline: none;
 }
 
 .navbar-links li {
