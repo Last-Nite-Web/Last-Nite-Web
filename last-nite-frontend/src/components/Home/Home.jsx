@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import lastNiteLogo from '../../static/images/logo.png';
-import homeVideo from '../../static/images/videos/video home.mp4';
+import homeVideo from '../../static/images/videos/video home.mp4.mp4';
 import './Home.css';
 
 // Calcula la próxima medianoche de fin de año.
